@@ -1,0 +1,4 @@
+# Ignore background application files
+.Rhistory
+# Ignore real data files
+/data/*
