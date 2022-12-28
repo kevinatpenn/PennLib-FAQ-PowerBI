@@ -1,9 +1,9 @@
 # Load data
 
-setwd("C:/Users/kevinat/Downloads/")
+setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
 
-dat_old <- read.csv("la_queryspy_store.csv")
-dat_new <- read.csv("la_queryspy2021-11-30.csv") # Update this filename
+dat_old <- read.csv("la_queryanalyzer_store.csv")
+dat_new <- read.csv("queryanalyzer_707_2022-09-26_12_03_12.csv") # Update this filename
 
 
 # Restore column names
@@ -23,19 +23,18 @@ names(dat_new) <- c("Id",
 dat_new <- dat_new[!(dat_new$Id %in% unique(dat_old$Id)), ]
 
 
-# Add anonymous IP addresses
+# Add empty IP address fields for alignment
 
-IP_lookup <- (max(dat_old$IP) + 1):(max(dat_old$IP) + length(unique(dat_new$IP)))
-names(IP_lookup) <- unique(dat_new$IP)
-
-dat_new$IP_orig <- dat_new$IP
-dat_new$IP <- unname(IP_lookup[dat_new$IP])
+dat_new <- cbind(dat_new[ , 1:5],
+                 data.frame(IP = rep(NA, nrow(dat_new))),
+                 dat_new[ , 6:ncol(dat_new)],
+                 data.frame(IP_orig = rep(NA, nrow(dat_new))))
 
 
 # Export full data
 
 write.csv(rbind(dat_old, dat_new),
-          file = "la_queryspy_store.csv",
+          file = "la_queryanalyzer_store.csv",
           na = "",
           row.names = FALSE)
 
@@ -45,9 +44,9 @@ write.csv(rbind(dat_old, dat_new),
 dat_old$Query <- NA
 dat_new$Query <- NA
 
-## Export data without IP addresses
+
+# Export data without IP addresses or query text
 write.csv(rbind(dat_old[ , -ncol(dat_old)], dat_new[ , -ncol(dat_new)]),
-          file = "la_queryspy_clean.csv",
+          file = "la_queryanalyzer_clean.csv",
           na = "",
           row.names = FALSE)
-
