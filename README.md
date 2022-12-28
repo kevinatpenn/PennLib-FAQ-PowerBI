@@ -2,7 +2,8 @@
 This is a Power BI dashboard for reporting University of Pennsylvania Libraries' FAQ use. Data are sourced from Springshare's LibAnswers platform with preprocessing scripts included in this repo.
 
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+## License
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
