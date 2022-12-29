@@ -1,14 +1,15 @@
 # Details for updating data sources
 
-## In LibAnswers
-- **Stats > FAQ Entries > FAQ Activity**; Set **Activity between** to start in **2015**; **Export All FAQ Views** (format differs greatly form the old; there may be a different report)
+## Routine maintenance
+
+### In LibAnswers
+- **Stats > FAQ Entries > FAQ Activity**; Set **Activity between** to start in **April 2015**; **Filter**; **Export All FAQ Views**
 - **Tickets & FAQs > FAQ Knowledge Base > Export FAQs**; Select **Strip HTML from export data**; **Export FAQs**
 - **Stats > Query Analyzer > Export Queries**
 
-## Locally
-1. Run *cleaner_QueryAnalyzer.R*
-1. Run *cleaner_FAQ_Export.R*
-1. Rename 'views' file, replacing date with '_clean' (or Run...?)
+### Locally
+1. Download *..._clean.csv* and *..._store.csv* files from OneDrive
+1. Run *cleaner_master.R* with updated filenames
 1. Optional: Delete files with dates in the file names
 1. Upload *..._clean.csv* and *..._store.csv* files to OneDrive, replacing old versions
 
