@@ -1,9 +1,9 @@
 # Load data
 
-setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
+#setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
 
-dat_old <- read.csv("la_queryanalyzer_store.csv")
-dat_new <- read.csv("queryanalyzer_707_2022-09-26_12_03_12.csv") # Update this filename
+dat_old <- read.csv(queryanalyzer_old)
+dat_new <- read.csv(queryanalyzer_new) # Update this filename
 
 
 # Restore column names
@@ -34,7 +34,7 @@ dat_new <- cbind(dat_new[ , 1:5],
 # Export full data
 
 write.csv(rbind(dat_old, dat_new),
-          file = "la_queryanalyzer_store.csv",
+          file = queryanalyzer_old,
           na = "",
           row.names = FALSE)
 
@@ -47,6 +47,6 @@ dat_new$Query <- NA
 
 # Export data without IP addresses or query text
 write.csv(rbind(dat_old[ , -ncol(dat_old)], dat_new[ , -ncol(dat_new)]),
-          file = "la_queryanalyzer_clean.csv",
+          file = queryanalyzer_out,
           na = "",
           row.names = FALSE)

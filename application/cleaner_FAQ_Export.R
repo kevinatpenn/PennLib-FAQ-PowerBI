@@ -1,11 +1,11 @@
 # Load data
 
-setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
+#setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
 
-names_old <- read.csv("la_faq_list_clean.csv",
+names_old <- read.csv(faq_export_old,
                     header = FALSE,
                     nrows = 1)
-dat_new <- read.csv("la_faq_export2022-12-28_04_20_18.csv") # Update this filename
+dat_new <- read.csv(faq_export_new) # Update this filename
 
 
 # Remove new columns
@@ -22,6 +22,6 @@ names(dat_new) <- names_old
 # Export new data
 
 write.csv(dat_new,
-          file = "la_faq_export_clean.csv",
+          file = faq_export_out,
           na = "",
           row.names = FALSE)

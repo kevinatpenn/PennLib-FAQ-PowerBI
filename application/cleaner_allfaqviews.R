@@ -1,14 +1,18 @@
-# Requirements
-#tidyr
+# Check for and install required packages
+
+if( !("tidyr" %in% installed.packages()) ){
+  install.packages("tidyr")
+}
+
 
 # Load data
 
-setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
+#setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
 
-names_old <- read.csv("la_faq_views_clean.csv",
+names_old <- read.csv(allfaqviews_old,
                     header = FALSE,
                     nrows = 1)
-dat_new <- read.csv("allfaqviews_2022_12_29.csv", # Update this filename
+dat_new <- read.csv(allfaqviews_new, # Update this filename
                     skip = 3)
 
 
@@ -35,6 +39,6 @@ dat_new <- tidyr::separate(dat_new,#[ , "Year.Month"],
 # Export new data
 
 write.csv(dat_new,
-          file = "allfaqviews_clean.csv",
+          file = allfaqviews_out,
           na = "",
           row.names = FALSE)
