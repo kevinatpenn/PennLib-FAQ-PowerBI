@@ -1,6 +1,6 @@
 # Set data file location and names
 
-setwd("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/data")
+setwd("C:/Users/kevinat/Documents/GitHub/PennLib-FAQ-PowerBI/data")
 
 allfaqviews_old <- "la_faq_views_clean.csv"
 allfaqviews_new <- "allfaqviews_2022_12_29.csv" # Update this filename
@@ -17,6 +17,6 @@ queryanalyzer_out <- "la_queryanalyzer_clean.csv"
 
 # Run scripts
 
-source("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/application/cleaner_allfaqviews.R")
-source("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/application/cleaner_faq_export.R")
-source("C:/Users/kevinat/Documents/PennLib-FAQ-PowerBI/application/cleaner_queryanalyzer.R")
+source("C:/Users/kevinat/Documents/GitHub/PennLib-FAQ-PowerBI/application/cleaner_allfaqviews.R")
+source("C:/Users/kevinat/Documents/GitHub/PennLib-FAQ-PowerBI/application/cleaner_faq_export.R")
+source("C:/Users/kevinat/Documents/GitHub/PennLib-FAQ-PowerBI/application/cleaner_queryanalyzer.R")
