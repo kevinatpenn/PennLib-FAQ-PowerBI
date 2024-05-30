@@ -16,9 +16,9 @@
 1. Download *..._clean.csv* and *..._store.csv* files from [SharePoint](https://penno365.sharepoint.com/:f:/r/teams/LIBLippincottLibrarians/Shared%20Documents/General/dashboard_FAQ/data?csf=1&web=1&e=EXBLH7)
 1. Run *cleaner_master.R* with updated filenames
 1. Optional: Delete files with dates in the file names
-1. Upload *..._clean.csv* and *..._store.csv* files to OneDrive, replacing old versions
+1. Upload *..._clean.csv* and *..._store.csv* files to [SharePoint](https://penno365.sharepoint.com/:f:/r/teams/LIBLippincottLibrarians/Shared%20Documents/General/dashboard_FAQ/data?csf=1&web=1&e=EXBLH7), replacing old versions
 
 ## Change file name/location
 If you need to point to a new file, not if updating as above:
-1. OneDrive > Right-click file > Details > Path > Copy direct link
+1. SharePoint/OneDrive > Right-click file > Details > Path > Copy direct link
 1. Power BI Desktop > File > Options and settings > Data source settings > Paste
